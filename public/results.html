@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Your Quiz Results</h1>
+        <nav>
+            <a href="/quiz-list.html">Take Another Quiz</a>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <div id="resultsContainer">
+            <h2>Quiz: <span id="resultsQuizTitle"></span></h2>
+            <p>Your Score: <span id="scoreDisplay"></span> / <span id="totalQuestionsDisplay"></span></p>
+            <h3>Correct Answers:</h3>
+            <ul id="correctAnswersList">
+                </ul>
+        </div>
+    </main>
+    <script src="js/quiz-results.js"></script>
+</body>
+</html>

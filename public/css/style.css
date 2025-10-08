@@ -1,0 +1,445 @@
+/* Variables for consistent theming */
+:root {
+    --primary-color: #4A90E2; /* A modern blue */
+    --secondary-color: #50B498; /* A complementary green-blue */
+    --accent-color: #F7C59F; /* A warm, light orange */
+    --text-color: #333;
+    --light-gray: #F8F9FA;
+    --medium-gray: #E9ECEF;
+    --dark-gray: #343A40;
+    --white: #FFFFFF;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+
+    /* Border Radius */
+    --border-radius: 8px;
+    --button-radius: 5px;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to bottom if present */
+}
+
+/* Header */
+header {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* For potential absolute positioning of elements */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+header nav {
+    margin-top: var(--spacing-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header nav button,
+header nav a {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 var(--spacing-sm);
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 90px; /* Ensure buttons have a minimum width */
+    text-align: center;
+}
+
+header nav button:hover,
+header nav a:hover {
+    background-color: #3a7bd2; /* Darker shade of primary */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#usernameDisplay {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-left: var(--spacing-md);
+    font-size: 1.1em;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1; /* Allows main content to take up available space */
+    padding: var(--spacing-lg);
+    max-width: 900px;
+    margin: var(--spacing-lg) auto;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+section {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    background-color: var(--light-gray);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05); /* Subtle inner shadow */
+}
+
+section#welcome-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+section#welcome-section button {
+    display: block; /* Make buttons block level */
+    width: 80%;
+    max-width: 300px;
+    margin: var(--spacing-sm) auto;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+section#welcome-section button:hover {
+    background-color: #429e84; /* Darker secondary */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Forms */
+form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    margin-bottom: var(--spacing-md);
+    border: 1px solid #ccc;
+    border-radius: var(--button-radius);
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Focus glow */
+    outline: none;
+}
+
+form button {
+    background-color: var(--primary-color); /* General form button color */
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: var(--spacing-sm);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #3a7bd2; /* Darker primary */
+    transform: translateY(-1px);
+}
+
+p#createQuizMessage, p#auth-message, p#quizListMessage {
+    margin-top: var(--spacing-sm);
+    font-weight: bold;
+    text-align: center;
+}
+
+p#auth-message {
+    font-size: 0.9em; /* Smaller for auth messages */
+}
+
+/* Question Blocks (Create Quiz Page) */
+.question-block {
+    border: 1px solid var(--medium-gray);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.question-block .remove-question-btn {
+    background-color: var(--danger-color);
+    margin-top: var(--spacing-sm);
+}
+.question-block .remove-question-btn:hover {
+    background-color: #c82333; /* Darker danger */
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Darker overlay */
+    backdrop-filter: blur(5px); /* Frosty effect */
+    display: flex; /* Use flexbox to center content */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border: none; /* No border */
+    border-radius: var(--border-radius);
+    width: 90%; /* Responsive width */
+    max-width: 450px; /* Max width for larger screens */
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3); /* Stronger shadow */
+    animation: fadeInScale 0.3s ease-out; /* Entrance animation */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 32px; /* Larger close button */
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--dark-gray);
+    text-decoration: none;
+}
+
+/* Quiz List Page */
+#quizList {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+#quizList li {
+    background-color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--button-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#quizList li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#quizList li span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#quizList li a {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: var(--button-radius);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+#quizList li a:hover {
+    background-color: #429e84;
+    text-decoration: none; /* Override default underline on hover */
+}
+
+/* Quiz Taking Page */
+#quizContainer {
+    text-align: center;
+}
+
+#questionNumber {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: var(--spacing-xs);
+}
+
+#questionText {
+    font-size: 1.5em;
+    margin-bottom: var(--spacing-md);
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+#optionsContainer button {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: var(--spacing-sm) auto;
+    padding: 12px 15px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--white);
+    color: var(--primary-color);
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#optionsContainer button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+#optionsContainer button.selected {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(74, 144, 226, 0.4);
+}
+
+#nextQuestionBtn {
+    margin-top: var(--spacing-md);
+    background-color: var(--success-color);
+    padding: 12px 25px;
+    font-size: 1.1em;
+}
+
+#nextQuestionBtn:hover {
+    background-color: #218838;
+}
+
+#quizCompleted h2 {
+    color: var(--success-color);
+}
+
+#viewResultsLink {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--button-radius);
+    text-decoration: none;
+    margin-top: var(--spacing-md);
+    transition: background-color 0.3s ease;
+}
+#viewResultsLink:hover {
+    background-color: #3a7bd2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    header nav button,
+    header nav a {
+        padding: 8px 12px;
+        margin: 0 3px;
+        font-size: 0.9em;
+        min-width: unset;
+    }
+    main {
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) auto;
+    }
+    .modal-content {
+        padding: var(--spacing-md);
+        width: 95%;
+    }
+    section#welcome-section button {
+        width: 95%;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    #optionsContainer button {
+        width: 95%;
+        padding: 10px 12px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    header nav {
+        flex-wrap: wrap; /* Allow buttons to wrap */
+    }
+    header nav button,
+    header nav a {
+        margin-bottom: var(--spacing-xs); /* Add space when wrapped */
+    }
+    main {
+        padding: var(--spacing-sm);
+    }
+    .modal-content {
+        padding: var(--spacing-sm);
+    }
+    .close-button {
+        font-size: 28px;
+        top: 5px;
+        right: 10px;
+    }
+}

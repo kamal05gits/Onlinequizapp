@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Maker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Online Quiz Maker!</h1>
+        <nav>
+            <button id="registerBtn">Register</button>
+            <button id="loginBtn">Login</button>
+            <button id="logoutBtn" style="display:none;">Logout</button>
+            <span id="usernameDisplay" style="display:none;"></span>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome-section" style="display:none;">
+            <h2>Choose an Option:</h2>
+            <button id="createQuizBtn">Create a New Quiz</button>
+            <button id="takeQuizBtn">Take a Quiz</button>
+        </section>
+
+        <section id="auth-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="auth-title"></h2>
+                <form id="auth-form">
+                    <label for="auth-username">Username:</label>
+                    <input type="text" id="auth-username" name="username" required>
+                    <label for="auth-password">Password:</label>
+                    <input type="password" id="auth-password" name="password" required>
+                    <button type="submit" id="auth-submit"></button>
+                    <p id="auth-message" style="color: red;"></p>
+                    <p style="text-align: center; margin-top: 15px;">
+                        <a href="#" id="toggleAuthMode" style="color: var(--primary-color); text-decoration: none; font-weight: bold;"></a>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

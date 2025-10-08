@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="quizTitleDisplay"></h1>
+        <nav>
+            <a href="/quiz-list.html">Back to Quizzes</a>
+        </nav>
+    </header>
+    <main>
+        <div id="quizContainer" style="display:none;">
+            <h2 id="questionNumber"></h2>
+            <p id="questionText"></p>
+            <div id="optionsContainer">
+                </div>
+            <button id="nextQuestionBtn">Next Question</button>
+        </div>
+        <div id="quizCompleted" style="display:none;">
+            <h2>Quiz Completed!</h2>
+            <p>Calculating your score...</p>
+            <a href="/results.html" id="viewResultsLink" style="display:none;">View Results</a>
+        </div>
+    </main>
+    <script src="js/quiz-taking.js"></script>
+</body>
+</html>
